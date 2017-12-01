@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BasicLib/BasicLib.iml" filepath="$PROJECT_DIR$/BasicLib/BasicLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GrowingProject.iml" filepath="$PROJECT_DIR$/GrowingProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HttpLib/HttpLib.iml" filepath="$PROJECT_DIR$/HttpLib/HttpLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageLoaderLib/ImageLoaderLib.iml" filepath="$PROJECT_DIR$/ImageLoaderLib/ImageLoaderLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WidgetLib/WidgetLib.iml" filepath="$PROJECT_DIR$/WidgetLib/WidgetLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
