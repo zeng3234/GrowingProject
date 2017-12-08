@@ -5,6 +5,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.net.Inet4Address;
@@ -102,5 +104,91 @@ public class DeviceUtils {
                 ((ip >> 8) & 0xFF) + "." +
                 ((ip >> 16) & 0xFF) + "." +
                 (ip >> 24 & 0xFF);
+    }
+
+
+    /**
+     * @return 当前设备系统版本
+     */
+    public static int getSDKVersion() {
+        return android.os.Build.VERSION.SDK_INT;
+    }
+
+    /**
+     * @return 设备厂商
+     */
+    public static String getManufacturer() {
+        return android.os.Build.MANUFACTURER;
+    }
+
+    /**
+     * 获取设备型号
+     *
+     * @return 设备型号
+     */
+    public static String getModel() {
+        String model = android.os.Build.MODEL;
+        if (TextUtils.isEmpty(model)) {
+            model = "";
+        } else {
+            model = model.trim().replaceAll("\\s*", "");
+        }
+        return model;
+    }
+
+    public static String getIMEI(Context pContext) {
+        TelephonyManager tm = (TelephonyManager) pContext.getSystemService(Context.TELEPHONY_SERVICE);
+        return tm != null ? tm.getDeviceId() : null;
+    }
+
+    public static String getIMSI(Context pContext) {
+        TelephonyManager tm = (TelephonyManager) pContext.getSystemService(Context.TELEPHONY_SERVICE);
+        return tm != null ? tm.getSubscriberId() : null;
+    }
+
+    public static boolean isSimCardReady(Context pContext) {
+        TelephonyManager tm = (TelephonyManager) pContext.getSystemService(Context.TELEPHONY_SERVICE);
+        return tm != null && tm.getSimState() == TelephonyManager.SIM_STATE_READY;
+    }
+
+    /**
+     * 获取手机状态信息
+     * <p>需添加权限 {@code <uses-permission android:name="android.permission.READ_PHONE_STATE"/>}</p>
+     *
+     * @return DeviceId(IMEI) = 99000311726612<br>
+     * DeviceSoftwareVersion = 00<br>
+     * Line1Number =<br>
+     * NetworkCountryIso = cn<br>
+     * NetworkOperator = 46003<br>
+     * NetworkOperatorName = 中国电信<br>
+     * NetworkType = 6<br>
+     * honeType = 2<br>
+     * SimCountryIso = cn<br>
+     * SimOperator = 46003<br>
+     * SimOperatorName = 中国电信<br>
+     * SimSerialNumber = 89860315045710604022<br>
+     * SimState = 5<br>
+     * SubscriberId(IMSI) = 460030419724900<br>
+     * VoiceMailNumber = *86<br>
+     */
+    public static String getPhoneStatus(Context pContext) {
+        TelephonyManager tm = (TelephonyManager) pContext.getSystemService(Context.TELEPHONY_SERVICE);
+        StringBuffer sb = new StringBuffer();
+        sb.append("DeviceId(IMEI) = " + tm.getDeviceId() + "\n");
+        sb.append("DeviceSoftwareVersion = " + tm.getDeviceSoftwareVersion() + "\n");
+        sb.append("Line1Number = " + tm.getLine1Number() + "\n");
+        sb.append("NetworkCountryIso = " + tm.getNetworkCountryIso() + "\n");
+        sb.append("NetworkOperator = " + tm.getNetworkOperator() + "\n");
+        sb.append("NetworkOperatorName = " + tm.getNetworkOperatorName() + "\n");
+        sb.append("NetworkType = " + tm.getNetworkType() + "\n");
+        sb.append("PhoneType = " + tm.getPhoneType() + "\n");
+        sb.append("SimCountryIso = " + tm.getSimCountryIso() + "\n");
+        sb.append("SimOperator = " + tm.getSimOperator() + "\n");
+        sb.append("SimOperatorName = " + tm.getSimOperatorName() + "\n");
+        sb.append("SimSerialNumber = " + tm.getSimSerialNumber() + "\n");
+        sb.append("SimState = " + tm.getSimState() + "\n");
+        sb.append("SubscriberId(IMSI) = " + tm.getSubscriberId() + "\n");
+        sb.append("VoiceMailNumber = " + tm.getVoiceMailNumber() + "\n");
+        return sb.toString();
     }
 }

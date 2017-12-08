@@ -1,7 +1,7 @@
-package com.gp.frame.basic.constant;
+package com.gp.frame.basic.version;
 //@formatter:off
 /**
- * 
+ *
  * @author zeng
  * @Create at on 2017/12/2 0:42
  * @Description  用于兼容compileVersionCode 过低，没有对应的值
@@ -9,6 +9,7 @@ package com.gp.frame.basic.constant;
  */
 //@formatter:on
 public class AndroidVersionCodes {
+
     /**
      * Magic version number for a current development build, which has
      * not yet turned into an official release.
@@ -32,7 +33,7 @@ public class AndroidVersionCodes {
 
     /**
      * September 2009: Android 1.6.
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -57,7 +58,7 @@ public class AndroidVersionCodes {
 
     /**
      * November 2009: Android 2.0
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -92,7 +93,7 @@ public class AndroidVersionCodes {
 
     /**
      * November 2010: Android 2.3
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -109,12 +110,12 @@ public class AndroidVersionCodes {
 
     /**
      * February 2011: Android 3.0.
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
      * <li> The default theme for applications is now dark holographic:
-     * {@link android.R.style#Theme_Holo}.
+     *      {@link android.R.style#Theme_Holo}.
      * <li> On large screen devices that do not have a physical menu
      * button, the soft (compatibility) menu is disabled.
      * <li> The activity lifecycle has changed slightly as per
@@ -154,17 +155,17 @@ public class AndroidVersionCodes {
 
     /**
      * June 2011: Android 3.2.
-     * <p>
+     *
      * <p>Update to Honeycomb MR1 to support 7 inch tablets, improve
      * screen compatibility mode, etc.</p>
-     * <p>
+     *
      * <p>As of this version, applications that don't say whether they
      * support XLARGE screens will be assumed to do so only if they target
      * {@link #HONEYCOMB} or later; it had been {@link #GINGERBREAD} or
      * later.  Applications that don't support a screen size at least as
      * large as the current screen will provide the user with a UI to
      * switch them in to screen size compatibility mode.</p>
-     * <p>
+     *
      * <p>This version introduces new screen size resource qualifiers
      * based on the screen size in dp: see
      * {@link android.content.res.Configuration#screenWidthDp},
@@ -176,7 +177,7 @@ public class AndroidVersionCodes {
      * {@link android.content.pm.ApplicationInfo#largestWidthLimitDp} is
      * preferred over the older screen size buckets and for older devices
      * the appropriate buckets will be inferred from them.</p>
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -202,7 +203,7 @@ public class AndroidVersionCodes {
 
     /**
      * October 2011: Android 4.0.
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -216,14 +217,14 @@ public class AndroidVersionCodes {
      * to turn it off if needed, although this is strongly discouraged since
      * it will result in poor performance on larger screen devices.
      * <li> The default theme for applications is now the "device default" theme:
-     * {@link android.R.style#Theme_DeviceDefault}. This may be the
-     * holo dark theme or a different dark theme defined by the specific device.
-     * The {@link android.R.style#Theme_Holo} family must not be modified
-     * for a device to be considered compatible. Applications that explicitly
-     * request a theme from the Holo family will be guaranteed that these themes
-     * will not change character within the same platform version. Applications
-     * that wish to blend in with the device should use a theme from the
-     * {@link android.R.style#Theme_DeviceDefault} family.
+     *      {@link android.R.style#Theme_DeviceDefault}. This may be the
+     *      holo dark theme or a different dark theme defined by the specific device.
+     *      The {@link android.R.style#Theme_Holo} family must not be modified
+     *      for a device to be considered compatible. Applications that explicitly
+     *      request a theme from the Holo family will be guaranteed that these themes
+     *      will not change character within the same platform version. Applications
+     *      that wish to blend in with the device should use a theme from the
+     *      {@link android.R.style#Theme_DeviceDefault} family.
      * <li> Managed cursors can now throw an exception if you directly close
      * the cursor yourself without stopping the management of it; previously failures
      * would be silently ignored.
@@ -253,7 +254,7 @@ public class AndroidVersionCodes {
 
     /**
      * June 2012: Android 4.1.
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -296,7 +297,7 @@ public class AndroidVersionCodes {
 
     /**
      * November 2012: Android 4.2, Moar jelly beans!
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -321,7 +322,7 @@ public class AndroidVersionCodes {
 
     /**
      * October 2013: Android 4.4, KitKat, another tasty treat.
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -353,7 +354,7 @@ public class AndroidVersionCodes {
 
     /**
      * June 2014: Android 4.4W. KitKat for watches, snacks on the run.
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -365,14 +366,13 @@ public class AndroidVersionCodes {
 
     /**
      * Temporary until we completely switch to {@link #LOLLIPOP}.
-     *
      * @hide
      */
     public static final int L = 21;
 
     /**
      * November 2014: Lollipop.  A flat one with beautiful shadows.  But still tasty.
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>
@@ -408,7 +408,7 @@ public class AndroidVersionCodes {
 
     /**
      * M is for Marshmallow!
-     * <p>
+     *
      * <p>Applications targeting this or a later release will get these
      * new changes in behavior:</p>
      * <ul>

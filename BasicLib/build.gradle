@@ -19,3 +19,57 @@ android {
 
 dependencies {
 }
+
+////Copy类型
+//task makeJar(type: Copy) {
+//    //删除存在的
+//    delete 'build/libs/mysdk.jar'
+//    //设置拷贝的文件
+//    from('build/intermediates/bundles/default/')
+//    //打进jar包后的文件目录
+//    into('build/libs/')
+//    //将classes.jar放入build/libs/目录下
+//    //include ,exclude参数来设置过滤
+//    //（我们只关心classes.jar这个文件）
+//    include('classes.jar')
+//    //重命名
+//    rename('classes.jar', 'mysdk.jar')
+//}
+//
+//makeJar.dependsOn(build)
+////在终端执行生成JAR包
+//// gradlew makeJar
+
+
+
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        options.tags = [ "Create","Description" ]
+    }
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+

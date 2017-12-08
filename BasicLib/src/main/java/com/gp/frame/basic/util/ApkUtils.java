@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
 
-import com.gp.frame.basic.constant.AndroidVersionCodes;
+import com.gp.frame.basic.version.AndroidVersionCodes;
 
 import java.io.File;
 //@formatter:off
